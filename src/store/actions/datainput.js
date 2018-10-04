@@ -2,32 +2,42 @@ import data from '../../products.json'
 import cate from '../../categories.json';
 
 
-
-function updateproduct(){
+function isincat(category, id){
   
+  if(category.id == id){
+    console.log('id',category.id)
+    console.log('idin',id)
+    console.log('name',category.name)
+    return category.name
+  }else{
+    if (category.hasOwnProperty('sublevels')){
+      for(var i in category.sublevels){
+        //console.log('namecat',category.name)
+        return isincat(category.sublevels[i],id)
+      }
+    }else{
+      return false
+    }
+  }
+}
+function updateproduct(){
+
   //console.log('categories',cate.categories)
   for(var i=0;i<data.products.length;i++){
+    
+    var product = data.products[i];
     var categorieslist ;
-    for (var j=0;j<cate.categories.length;j++){
-      categorieslist = []
-      var curcat = cate.categories[i];
-      console.log("categori",curcat)
-      var found = false; 
-      if (curcat != undefined){
-      while(curcat.hasOwnProperty('sublevelid')){
-        //console.log("namecat",curcat.name)
-        if(curcat.id==product.sublevel_id){
-          found = true;
-          break;
-        }  
-        categorieslist.push(curcat.name)
-      }
-      if (found) break ;
+    var catnam ;
+    for (var j in cate.categories){ 
+      var currcat =  cate.categories[j]
+      catnam =  isincat(currcat,product.sublevel_id);
+      if(catnam!=false){
+        console.log("res",catnam)
+        break;
       }
     }
-    var product = data.products[i];
-    
-    product.availableSizes= categorieslist;
+    if (catnam == false) catnam="Desayunos";
+    product.availableSizes= [catnam];
     product.currencyFormat= "$";
     product.currencyId="COP";
     product.description = "";
