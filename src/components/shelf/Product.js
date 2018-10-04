@@ -8,8 +8,9 @@ import util from '../../util';
 
 const Product = (props) => {
   const product = props.product;
-
-  // Um componente de input pode alterar a quantidade no futuro
+  var image;
+  console.log("imagepath",product.availableSizes[0].split(" ")[0])
+  image = product.availableSizes[0].split(" ")[0];
   product.quantity = 1;
 
   let formattedPrice = util.formatPrice(product.price, product.currencyId);
@@ -31,7 +32,7 @@ const Product = (props) => {
       }
       <Thumb
         classes="shelf-item__thumb"
-        src={require(`../../static/examplefood.jpg`)}
+        src={require(`../../static/${image}.jpg`)}
         alt={product.title}
       />
       <p className="shelf-item__title">{product.title}</p>

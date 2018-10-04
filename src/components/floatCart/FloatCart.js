@@ -154,7 +154,7 @@ class FloatCart extends Component {
               <small className="sub-price__installment">
                 {!!cartTotals.installments && (
                   <span>
-                    {`OR UP TO ${cartTotals.installments} x ${cartTotals.currencyFormat} ${util.formatPrice(cartTotals.totalPrice / cartTotals.installments, cartTotals.currencyId)}`}
+                    {``}
                   </span>
                 )}
               </small>
