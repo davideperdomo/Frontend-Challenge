@@ -10,6 +10,6 @@ npm install
 ## 2. Para iniciar la aplicación web, ejecutar:
 
 ```
-npm install
+npm start
 ```
 Desarrollada por David Esteban Perdomo, basada en ejemplo de React https://reactjs.org/community/examples.html.
