@@ -7,7 +7,7 @@ import { updateFilters } from '../../store/actions/filterActions';
 
 import Checkbox from '../Checkbox';
 
-const availableSizes = [
+const availableCategories = [
   'Bebidas',
   'Desayunos',
   'Almuerzos',
@@ -40,7 +40,7 @@ class Filter extends Component {
   )
 
   createCheckboxes = () => (
-    availableSizes.map(this.createCheckbox)
+    availableCategories.map(this.createCheckbox)
   )
 
   render() {

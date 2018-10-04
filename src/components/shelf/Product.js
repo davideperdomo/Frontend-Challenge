@@ -9,8 +9,8 @@ import util from '../../util';
 const Product = (props) => {
   const product = props.product;
   var image;
-  console.log("imagepath",product.availableSizes[0].split(" ")[0])
-  image = product.availableSizes[0].split(" ")[0];
+  console.log("imagepath",product.availableCategories[0].split(" ")[0])
+  image = product.availableCategories[0].split(" ")[0];
   product.quantity = 1;
 
   let formattedPrice = util.formatPrice(product.price, product.currencyId);

@@ -32,26 +32,10 @@ export const fetchProducts = (filters, sortBy, callback) => dispatch => {
       let { products } = res.data;
       console.log("exproducts:",products);
       console.log("rappiroducts:",dataproducts);
-      /*
-      if(!!filters && filters.length > 0){
-        products = products.filter( p => filters.find( f => p.availableSizes.find( size => size === f ) ) )
-      }
 
-      if(!!sortBy){
-        products = products.sort(compare[sortBy]);
-      }
-
-      if(!!callback) {
-        callback();
-      }
-      
-      return dispatch({
-        type: FETCH_PRODUCTS,
-        payload: products
-      });*/
       console.log("filters",filters)
       if(!!filters && filters.length > 0){
-        dataproducts = dataproducts.filter( p => filters.find( f => p.availableSizes.find( size => size === f ) ) )
+        dataproducts = dataproducts.filter( p => filters.find( f => p.availableCategories.find( size => size === f ) ) )
       }
 
       if(!!sortBy){
