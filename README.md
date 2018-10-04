@@ -12,4 +12,4 @@ npm install
 ```
 npm install
 ```
-Aplicación web basada en ejemplo de React https://reactjs.org/community/examples.html.
+Desarrollada por David Esteban Perdomo, basada en ejemplo de React https://reactjs.org/community/examples.html.
