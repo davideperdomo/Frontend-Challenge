@@ -30,8 +30,6 @@ class CartProduct extends Component {
     if(!!this.state.isMouseOver){
       classes.push('shelf-item--mouseover');
     }
-
-  {/*imageincart//src={require(`../../static/products/${product.sku}_2.jpg`)}*/}
     return (
       <div className={classes.join(" ")}>
         <div
@@ -42,13 +40,13 @@ class CartProduct extends Component {
         />
         <Thumb
           classes="shelf-item__thumb"
-          src={require(`../../static/${product.availableSizes[0].split(" ")[0]}.jpg`)}
+          src={require(`../../static/${product.availableCategories[0].split(" ")[0]}.jpg`)}
           alt={product.title}
         />
         <div className="shelf-item__details">
           <p className="title">{product.title}</p>
           <p className="desc">
-            {`${product.availableSizes[0]}`} <br />
+            {`${product.availableCategories[0]}`} <br />
             Quantity: {product.quantity}
           </p>
         </div>

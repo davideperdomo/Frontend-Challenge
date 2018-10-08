@@ -24,7 +24,6 @@ const Product = (props) => {
       </div>
     );
   }
-//  src={require(`../../static/products/${product.sku}_1.jpg`)}
   return (
     <div className="shelf-item" data-sku={product.sku}>
       {!product.available && 

@@ -4,8 +4,6 @@ import axios from 'axios';
 
 import { DATA_PRODUCTS } from './datainput' ;
 
-const productsAPI = "https://react-shopping-cart-67954.firebaseio.com/products.json";
-
 
 const compare = {
   'lowestprice': (a, b) => {
@@ -27,13 +25,8 @@ const compare = {
 export const fetchProducts = (filters, sortBy, callback) => dispatch => {
   var dataproducts = DATA_PRODUCTS;
 
-  axios.get(productsAPI)
-    .then(res => {
-      let { products } = res.data;
-      console.log("exproducts:",products);
-      console.log("rappiroducts:",dataproducts);
-
-      console.log("filters",filters)
+      //console.log("rappiroducts:",dataproducts);
+      //console.log("filters",filters)
       if(!!filters && filters.length > 0){
         dataproducts = dataproducts.filter( p => filters.find( f => p.availableCategories.find( size => size === f ) ) )
       }
@@ -50,10 +43,4 @@ export const fetchProducts = (filters, sortBy, callback) => dispatch => {
         type: FETCH_PRODUCTS,
         payload: dataproducts
       });
-
-    })
-    .catch(err => {
-      console.log(err);
-      throw new Error('Could not fetch products. Try again later.');
-    });
 }

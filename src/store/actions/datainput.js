@@ -37,7 +37,6 @@ function updateproduct(){
       }
     }
     if (catnam == false) catnam="Desayunos";
-    product.availableSizes= [catnam];
     product.availableCategories= [catnam];
     product.currencyFormat= "$";
     product.currencyId="COP";

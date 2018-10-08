@@ -11,7 +11,8 @@ const availableCategories = [
   'Bebidas',
   'Desayunos',
   'Almuerzos',
-  'Vinos'
+  'Vinos',
+  'Fake'
 ];
 
 class Filter extends Component {
